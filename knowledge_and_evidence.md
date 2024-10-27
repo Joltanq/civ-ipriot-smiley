@@ -147,35 +147,35 @@ python3 main.py
 > But we defining Y = self.YELLOW as an instance variable so that every instance of Smiley can have its own colour
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
-1. What is the purpose of a constructor (in general) and this one (in particular)?
-this is the init method. not  accepted that it draws mouth n eyes, or  calls super, draw mouth n eyes. go up one level
-   it creates a new isntance of sensehat, then what?
-   > Your answer here
-   >
+   1. What is the purpose of a constructor (in general) and this one (in particular)?
+   >    The constructor method is line 10 in happy.py where the __init__ function is called, and allows us to create an instance of a Happy Smiley
+   >    In this particular constructor, it creates an instance of a Smiley, with a subclass of Happy
+   >    Becuase of the super() call, it inherits attributes from the superclass Smiley, which allows it to also do things like create a SenseHat object, as well as the show and dim_display methods
+ 
+      2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
-   2. What statement(s) does it execute (consider the `super` call), and what is the result?
-
-   > Your answer here
+   >    It creates a Smiley with a happy expression, and draws a mouth and eyes.
+   >    However, before doing so, becuase the super call is run first, a SenseHat instance is created, drawing a 8x8 matrix with Yellow pixeles (before any modifications)
    >
 
 ### Code style
 [//]: # (ignore sensehat.py. it does not exist!)
 1. What code style is used in the code? Is it likely to be the same as the code style used in the SenseHat? Give to reasons as to why/why not:
    
-> Your answer here
->PEP8. but does sensehat usePEP8? what clues are there in smiley or main. look for any public invocation of sense hat.
-> soomething baout SenseHat() is or is not pep8
-> 
+> The codestyle used is PEP8, as indicated by the variables using snake_case, but classes having their first letter capitalised (PascalCase)
+> SenseHat is likely to use PEP8 as well, as the invocation of SenseHat (line 13 in smiley.py) is in PascalCase
+ 
 
 2. List three aspects of this convention you see applied in the code.
 
-> Your answer here
+> Some examples of this convention are 1) the dim_display using snake_case, 2) the constants for colours is expressed in all captialised letters in class Smiley, and 3) self is always used as the first argument to instance methods
 >
 
 3. Give two examples of organizational documentation in the code.
 
-> Your answer here
->
+> both examples are from happy.py
+> 1) in the class Happy, a docstring is used to comment the code, informing other developers what the class does 
+> 2) in the draw_eyes function, a docstring is used to tell other developers what  this function does, as well as the type expected by wide_open (line 27)
 
 ### Identifying and understanding classes
 
