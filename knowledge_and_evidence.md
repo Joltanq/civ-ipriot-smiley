@@ -108,45 +108,48 @@ python3 main.py
 
 1. Examine the code for the `smiley.py` file and provide  an example of a variable of each of the following types and their corresponding values (`_` should be replaced with the appropriate values):
 
-   | Type                    | name       | value          |
-   | ----------              | ---------- | -------------- |
-   | built-in primitive type | _          |  _             |
-   | built-in composite type | _          |  _             |
-   | user-defined type       | _          |  _             |
+   | Type                                                                   | name   | value          |
+   |------------------------------------------------------------------------|--------|----------------|
+   | built-in primitive type  (bool, int, float, string)                    | dimmed | boolean (True) |
+   | built-in composite type  (one that stores multiple vaules like a list) | pixels | list           |
+   | user-defined type  (whatever is defined by  the class                  | WHITE  | (255,255,255)  |
 
 2. Fill in (`_`) the following table based on the code in `smiley.py`:
 
-   | Object                   | Type                    |
-   | ------------             | ----------------------- |
-   | self.pixels              | _                       |
-   | A member of self.pixels  | _                       |
-   | self                     | _                       |
+   | Object                   | Type   |
+   | ------------             |--------|
+   | self.pixels              | list   |
+   | A member of self.pixels  | tuple  |
+   | self                     | Smiley |
 
 3. Examine the code for `smiley.py`, `sad.py`, and `happy.py`. Give an example of each of the following control structures using an example from **each** of these files. Include the first line and the line range:
 
-   | Control Flow | File       | First line  | Line range  |
-   | ------------ | ---------- | ----------- | ----------- |
-   |  sequence    |  _         | _           | _           |
-   |  selection   | _          | _           | _           |
-   |  iteration   | _          | _           | _           |
+   | Control Flow | File     | First line         | Line range |
+   | ------------ |----------|--------------------|------------|
+   |  sequence    | happy.py | self.draw_eyes     | 39 to 43   |
+   |  selection   | sad.py   | if wide_open:      | 26 to 29   |
+   |  iteration   | sad.py   | for pixel in mouth | 16 to 17   |
 
 4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
-   | Type                    | Used? | Example |
-   | ----------------------- | ----- | --------|
-   | int                     | _     | _          |
-   | float                   | _     | _          |
-   | str                     | _     | _          |
-   | bool                    | _     | _          |
+   | Type                    | Used?           | Example                 |
+   | ----------------------- |-----------------|-------------------------|
+   | int                     | No              | number_of_occurance = 1 |
+   | float                   | Yes in happy.py | delay = 0.25            |
+   | str                     | No              | welcome = "hello"        |
+   | bool                    | Yes in smiley.py | dimmed = True           |
+
 
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
-> Your answer here
->
+> An example of a class variable is WHITE = (255,255,255). An example of an instance variable is Y = self.YELLOW
+> We have to define the colours as a class variables so that each instance is able to access
+> But we defining Y = self.YELLOW as an instance variable so that every instance of Smiley can have its own colour
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
-   1. What is the purpose of a constructor (in general) and this one (in particular)?
-
+1. What is the purpose of a constructor (in general) and this one (in particular)?
+this is the init method. not  accepted that it draws mouth n eyes, or  calls super, draw mouth n eyes. go up one level
+   it creates a new isntance of sensehat, then what?
    > Your answer here
    >
 
@@ -156,11 +159,13 @@ python3 main.py
    >
 
 ### Code style
-
+[//]: # (ignore sensehat.py. it does not exist!)
 1. What code style is used in the code? Is it likely to be the same as the code style used in the SenseHat? Give to reasons as to why/why not:
    
 > Your answer here
->
+>PEP8. but does sensehat usePEP8? what clues are there in smiley or main. look for any public invocation of sense hat.
+> soomething baout SenseHat() is or is not pep8
+> 
 
 2. List three aspects of this convention you see applied in the code.
 
@@ -188,12 +193,13 @@ python3 main.py
 2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
 
 > Your answer here
->
+> think about how easy it is to make a particular smiley blink, as opposed to what actually has to happen to make a smiley blink
+> and all smileys blnk differently. how to make it smiley easily, wwithout talking abotu how 
 
 3. What is the name of the process of deriving from base classes? What is its purpose in this project? (Max 150 words)
 
 > Your answer here
->
+> keep it simple. focus on main example, smiley -> hapy and sad 
 
 ### Compare and contrast classes
 
@@ -201,6 +207,7 @@ Compare and contrast the classes Happy and Sad.
 
 1. What is the key difference between the two classes?
    > Your answer here
+   > blinkability
    >
 2. What are the key similarities?
    > Your answer here
@@ -217,8 +224,9 @@ Compare and contrast the classes Happy and Sad.
 1. Which class(es) utilize the functionality of the SenseHat?
    > Your answer here
    >
-2. Which of these classes directly interact with the SenseHat functionalities?
+2. Which of these classes directly interact with the SenseHat functionalities? Which of the senseHat's functionality does it/ they  utilise, smiley is 
    > Your answer here
+   > smiley is a sensehat instance
    >
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
    > Your answer here
