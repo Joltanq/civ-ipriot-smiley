@@ -142,20 +142,20 @@ python3 main.py
 
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
-> An example of a class variable is WHITE = (255,255,255). An example of an instance variable is Y = self.YELLOW
-> We have to define the colours as a class variables so that each instance is able to access
-> But we defining Y = self.YELLOW as an instance variable so that every instance of Smiley can have its own colour
+> An example of a class variable is WHITE = (255,255,255). An example of an instance variable is Y = self.YELLOW. 
+> We have to define the colours as a class variables so that each instance is able to access them 
+> but we define Y = self.YELLOW as an instance variable so that every instance of Smiley can have its own colour
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
-   >    The constructor method is line 10 in happy.py where the __init__ function is called, and allows us to create an instance of a Happy Smiley
+   >    The constructor method is line 10 in happy.py where the __init__ function is called, and allows us to create an instance of a Happy Smiley.
    >    In this particular constructor, it creates an instance of a Smiley, with a subclass of Happy
-   >    Becuase of the super() call, it inherits attributes from the superclass Smiley, which allows it to also do things like create a SenseHat object, as well as the show and dim_display methods
+   >    Because of the super() call, it inherits attributes from the superclass Smiley, which allows it to also do things like create a SenseHat object, as well as the show and dim_display methods
  
       2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
    >    It creates a Smiley with a happy expression, and draws a mouth and eyes.
-   >    However, before doing so, becuase the super call is run first, a SenseHat instance is created, drawing a 8x8 matrix with Yellow pixeles (before any modifications)
+   >    However, before doing so, because the super call is run first, a SenseHat instance is created, drawing a 8x8 matrix with Yellow pixels (before any modifications)
    >
 
 ### Code style
@@ -194,11 +194,10 @@ python3 main.py
 
 2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
 
-> Abstraction is a way to implement a class which exposes the critical aspects of an object, and ignoring irrelevant details so that it can be used by more objects due to its general nature
-> An example of abstraction is the Blinkable class, which simplifies the implementation so that any object inheriting this class can also easily blink
-> In this scenario, any Smiley that also inherits the Blinkable class will also inherit the blink method, but because it is set up as an abstract method, the implementation will have to be done in the subclass
-> This allows the Happy smiley can blink differently than if it were implemented in the Sad smiley
-> Another way to manage this would have been to implement the blink functionality in blinkable.py instead, but that would mean all Smileys would blink the same
+> Abstraction is a way to implement a class which exposes the critical aspects of an object, and ignoring irrelevant details so that it can be used by more objects due to its general nature.
+> An example of abstraction is the Blinkable class, which itself cannot be instantiation, but used as a base class instead.
+> In this scenario, any Smiley that also inherits the Blinkable class will also inherit the blink method, but because it is set up as an abstract method, the implementation will have to be done in the subclass.
+> This allows the Happy smiley can blink differently than if it were implemented in the Sad smiley. This means that they can both the general ability to blink, but it can be done in different ways
 
 3. What is the name of the process of deriving from base classes? What is its purpose in this project? (Max 150 words)
 
@@ -217,11 +216,10 @@ Compare and contrast the classes Happy and Sad.
    > Their similiarities come from the base class, such as their size (8x8 matrix) and the colours that the Smiley can be drawn in
    >
 3. What difference stands out the most to you and why?
-   > Your answer here
-   > not sure i understand the difference between 1 and 3
-   >
+   > Becuase the Sad class does not inherit the blinkable class, the Sad smiley does not need to be blink in order to be instantiated, but the Happy class does. 
+
 4. How does this difference affect the functionality of these classes
-   > Your answer here
+   > Because Sad does not inherit the blinkable class, the Sad smiley can implement a blink method which is not a prequisite in order to be instantiated, but the Happy class does
    >
 
 ### Where is the Sense(Hat) in the code?
@@ -251,16 +249,15 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
-> Yes. Becuase of the way the colours have been defined in the if statement (line 31 in happy), all happy smileys will blink the same way
+> Yes. Because of the way the colours have been defined in the if statement (line 31 in happy), all happy smileys will blink the same way
 > If the author wanted the ability to control the way each instance of a Happy Smiley blinking, they could've included it as a parameter in the draw_eyes attribute instead
 >
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
 
 > Polymorphism refers to the ability of different classes implementing the same methods to perform different behaviours
-> In the Smiley example, both happy and sad have their own methods to draw a mouth, but becuase of polymorphism, we are able to draw different shapes with it
+> In the Smiley example, both happy and sad have their own methods to draw a mouth, but because of polymorphism, we are able to draw different shapes with it
 
-might need to change this answer?
 
 4. How is inheritance used in the blink method, and why is it important for polymorphism?
 
@@ -284,7 +281,8 @@ might need to change this answer?
 
 Include a screenshot of the sad smiley or the modified `main.py`:
 
-![Sad Smiley Blinking](C:\Users\joelt\source\repos\civ-ipriot-smiley\docs\images\confirm_new_settings.png)
+![Sad Smiley Blinking](docs\images\sad.jpg)
+
 
 
 
@@ -310,12 +308,12 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   4. **Implementation Flexibility:** Explain why you could grant the Sad Smiley a blinking feature similar to the Happy Smiley's implementation, even without directly using `Blinkable`.
 
-  > This is because of the way the Smiley class has been set up. 
-  > becuase smiley is set up as polymorphic?
+  > This is because of the way the Smiley class has been set up. Because Smiley is set up as polymorphic, we are able to implement the Happy and Sad classes differently. 
 
   5. **Concept and Language Specificity:** In relation to your response to question (4), what is this capability known as, and why is it feasible in Python and many other dynamically typed languages but not in most statically typed programming languages like C#? **Clue** This concept is hinted at in the title of this section.
 
-  > Your answer here
+  > This capability is known as polymorphism, and is feasible due to the concept known as Duck Typing. In dynamically typed languages, we do not need to explicitly define the typology. Polymorphic objects just require it to have the neccessary attributes and methods passed into it.
+  > Statically typed languages are not able to do this adhoc type implementation as they will require the typology to be defined ahead of time and we will need to be more intentional about the types and how they relate.
 
   ***
 
@@ -371,7 +369,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   4. **Bulk rename:** We want to update our grid to use the value of complexion, but we have so many `Y`'s in the grid. Use your IDE's refactoring tool to rename all instances of the **symbol** `Y` to `X`. Where `X` is the value of the `complexion` variable. Include a screenshot evidencing you have found the correct refactor tool and the changes made.
 
-  ![Bulk Rename](screenshots/bulk_rename.png)
+  ![Bulk Rename](docs\images\evidence.jpg)
 
   5. **Update the `complexion` method:** Adjust this method to return `self.my_complexion`, ensuring that whatever color is assigned during instantiation is what the smiley displays.
 
