@@ -132,27 +132,28 @@ python3 main.py
 
 4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
-   | Type                    | Used?           | Example                 |
-   | ----------------------- |-----------------|-------------------------|
-   | int                     | No              | number_of_occurance = 1 |
-   | float                   | Yes in happy.py | delay = 0.25            |
-   | str                     | No              | welcome = "hello"        |
-   | bool                    | Yes in smiley.py | dimmed = True           |
+   | Type                    | Used?            | Example                                                           |
+   | ----------------------- |------------------|-------------------------------------------------------------------|
+   | int                     | Yes              | eyes = [10, 13, 18, 21]   - the int represent the pixel postition |
+   | float                   | Yes in happy.py  | delay = 0.25                                                      |
+   | str                     | No               | welcome = "hello"                                                 |
+   | bool                    | Yes in smiley.py | dimmed = True                                                     |
 
 
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
-> An example of a class variable is WHITE = (255,255,255). An example of an instance variable is Y = self.YELLOW. 
-> We have to define the colours as a class variables so that each instance is able to access them 
-> but we define Y = self.YELLOW as an instance variable so that every instance of Smiley can have its own colour
-
-6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
+> An example of a class variable is WHITE = (255,255,255). 
+> WHITE is a class variable because it is defined in the class, but  not  within the instance (ie as part of the __init__ method)
+> An example of an instance variable is pixels. This is because it is defined as part of the __init__ method, meaning each instance of Smiley can then have its own change of colour (such as changing the complexion towards the end of this project)
+    
+6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:    
    1. What is the purpose of a constructor (in general) and this one (in particular)?
-   >    The constructor method is line 10 in happy.py where the __init__ function is called, and allows us to create an instance of a Happy Smiley.
-   >    In this particular constructor, it creates an instance of a Smiley, with a subclass of Happy
-   >    Because of the super() call, it inherits attributes from the superclass Smiley, which allows it to also do things like create a SenseHat object, as well as the show and dim_display methods
+   >    The constructor method is line 10 in happy.py where the __init__ function is called, and allows us to create an instance of the Happy class.
+   >    In general, a constructor allows us to initialise an instance of the object with the required instance attributes.
+   >    In this particular constructor, it creates an instance of a Happy, which is a subclass of Smiley. On top of the inherited dim_display and show methods, Happy also gains the ability to draw eyes, draw a mouth as well as blink
+   
  
-      2. What statement(s) does it execute (consider the `super` call), and what is the result?
+   2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
    >    It creates a Smiley with a happy expression, and draws a mouth and eyes.
    >    However, before doing so, because the super call is run first, a SenseHat instance is created, drawing a 8x8 matrix with Yellow pixels (before any modifications)
