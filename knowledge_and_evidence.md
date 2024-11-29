@@ -374,8 +374,9 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   ![Bulk Rename](docs\images\evidence.jpg)
 
   5. **Update the `complexion` method:** Adjust this method to return `self.my_complexion`, ensuring that whatever color is assigned during instantiation is what the smiley displays.
-
+  ![happy_defined_complexion.jpg](docs\images\happy_defined_complexion.jpg)
   6. **Verification:** Run the updated code to confirm that Smileys still defaults to yellow unless specified otherwise.
+![happy_default_complexion.jpg](docs\images\happy_default_complexion.jpg)
 
 ### Flexible Colors – Step 3
 
@@ -386,12 +387,13 @@ With the foundational changes in place, it's now possible to implement varied sm
 
        ```python
        super().__init__(complexion=self.BLUE)
-       ```
+       ```  
 
     2. **Test color functionality for the Sad smiley:** Execute the program to verify that the Sad smiley now appears blue.
 
     3. **Ensure the Happy smiley remains yellow:** Confirm that changes to the Sad smiley do not affect the default color of the Happy smiley, which should still display in yellow.
 
+![sad_and_happy.jpg](docs\images\sad_and_happy.jpg)
     4. **Design and Implement An Angry Smiley:** Create an Angry smiley class that inherits from the `Smiley` class. Set the color of the Angry smiley to red by passing `self.RED` as the `complexion` argument in the superclass call.
     ![angry.jpg](docs/images/angry.jpg)
     ***

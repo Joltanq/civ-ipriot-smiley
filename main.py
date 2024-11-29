@@ -9,15 +9,17 @@ from sad import Sad
 from angry import Angry
 from smiley import Smiley
 def main():
-    smiley = Happy(Smiley.GREEN)
-    # smiley = Happy()
-
+    # smiley = Happy(Smiley.GREEN)
+    smiley = Happy()
+    sad_smiley = Sad()
 
     smiley.show()
+    sad_smiley.show()
+
 
     time.sleep(1)
 
-    # smiley.blink()
+    smiley.blink()
 
 if __name__ == '__main__':
     ############################################################

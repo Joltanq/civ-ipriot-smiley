@@ -12,8 +12,6 @@ class Happy(Smiley, Blinkable):
 
         self.draw_mouth()
         self.draw_eyes()
-        # self.my_complexion = my_complexion
-        # self.my_complexion
 
     def draw_mouth(self):
         """
@@ -30,7 +28,7 @@ class Happy(Smiley, Blinkable):
         """
         eyes = [10, 13, 18, 21]
         for pixel in eyes:
-            self.pixels[pixel] = self.BLANK if wide_open else self.my_complexion()
+            self.pixels[pixel] = self.BLANK if wide_open else self.complexion()
 
 
     def blink(self, delay=0.25):
