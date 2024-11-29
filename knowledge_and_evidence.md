@@ -355,6 +355,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   3. **Determine the applicable Object-Oriented principle:** Consider whether Abstraction, Polymorphism, Inheritance, or Encapsulation best applies to the modifications made in this step.
 
   4. **Verify the implementation:** Ensure that the modifications function as expected. The smileys should still display in yellow, confirming that the new method correctly replaces the direct color references.
+    ![flexible_colour.jpg](docs/images/flexible_colour.jpg)
 
   This step is crucial for setting up a more flexible system for color management in the smiley display logic, allowing for easy adjustments and extensions in the future.
 
@@ -376,20 +377,21 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   6. **Verification:** Run the updated code to confirm that Smileys still defaults to yellow unless specified otherwise.
 
-  ### Flexible Colors – Step 3
+### Flexible Colors – Step 3
 
-  With the foundational changes in place, it's now possible to implement varied smiley colors for different emotional expressions.
+With the foundational changes in place, it's now possible to implement varied smiley colors for different emotional expressions.
 
-  1. **Adjust the `Sad` class initialization:** In the `Sad` class's initializer method, change the superclass call to include the `complexion` argument with the value `self.BLUE`, as shown:
 
-     ```python
-     super().__init__(complexion=self.BLUE)
-     ```
+1. **Adjust the `Sad` class initialization:** In the `Sad` class's initializer method, change the superclass call to include the `complexion` argument with the value `self.BLUE`, as shown:
 
-  2. **Test color functionality for the Sad smiley:** Execute the program to verify that the Sad smiley now appears blue.
+       ```python
+       super().__init__(complexion=self.BLUE)
+       ```
 
-  3. **Ensure the Happy smiley remains yellow:** Confirm that changes to the Sad smiley do not affect the default color of the Happy smiley, which should still display in yellow.
+    2. **Test color functionality for the Sad smiley:** Execute the program to verify that the Sad smiley now appears blue.
 
-  4. **Design and Implement An Angry Smiley:** Create an Angry smiley class that inherits from the `Smiley` class. Set the color of the Angry smiley to red by passing `self.RED` as the `complexion` argument in the superclass call.
+    3. **Ensure the Happy smiley remains yellow:** Confirm that changes to the Sad smiley do not affect the default color of the Happy smiley, which should still display in yellow.
 
-  ***
+    4. **Design and Implement An Angry Smiley:** Create an Angry smiley class that inherits from the `Smiley` class. Set the color of the Angry smiley to red by passing `self.RED` as the `complexion` argument in the superclass call.
+    ![angry.jpg](docs/images/angry.jpg)
+    ***

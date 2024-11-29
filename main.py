@@ -7,14 +7,17 @@ import time
 from happy import Happy
 from sad import Sad
 from angry import Angry
+from smiley import Smiley
 def main():
-    smiley = Angry()
+    smiley = Happy(Smiley.GREEN)
+    # smiley = Happy()
+
 
     smiley.show()
 
     time.sleep(1)
 
-    smiley.blink()
+    # smiley.blink()
 
 if __name__ == '__main__':
     ############################################################

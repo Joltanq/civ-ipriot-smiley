@@ -9,10 +9,10 @@ class Smiley:
     BLANK = (0, 0, 0)
     BLUE = (0,0,255)
 
-    def __init__(self, complexion=YELLOW):
+    def __init__(self, complexion= None):
         # We have encapsulated the SenseHat object
         self.sense_hat = SenseHat()
-        self.my_complexion = complexion
+        self.my_complexion = complexion or self.YELLOW
         X = self.my_complexion
 
         O = self.BLANK
